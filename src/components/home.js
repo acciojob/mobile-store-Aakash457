@@ -4,15 +4,14 @@ import products from "../constants/products";
 
 function Home() {
   return (
-    <div className="container">
+    <div>
       {products.map((product) => (
         <div className="col-12" key={product.id}>
           <div>
             <Link to={`/products/${product.id}`}>
               <div className="row">
-                <div className="col">
+                <div>
                   <h2>{product.name}</h2>
-                  <p>{product.price}</p>
                 </div>
               </div>
             </Link>

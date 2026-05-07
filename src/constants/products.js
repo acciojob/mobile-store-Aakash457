@@ -19,6 +19,11 @@ const products = [
     name: "Pixel",
     price: 75000,
   },
+  {
+    id: 5,
+    name: "Nokia",
+    price: 50000,
+  },
 ];
 
 export default products;
