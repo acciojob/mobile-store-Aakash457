@@ -2,22 +2,22 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import Home from "./home";
-import Admin from "./admin";
 import Product from "./product";
+import Admin from "./admin";
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
+      <div>
         <Link to="/">Home</Link>
         <Link to="/admin">Admin</Link>
-      </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/products/:id" element={<Product />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/:id" element={<Product />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

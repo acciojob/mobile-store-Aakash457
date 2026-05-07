@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import productsData from "../constants/products";
-import products from "../constants/products";
 
 function Admin() {
   const [products, setProducts] = useState(productsData);
 
   const removeProduct = (id) => {
-    const updated = products.filter((p) => p.id !== id);
-    setProducts(updated);
+    const updatedProducts = products.filter((item) => item.id !== id);
+
+    setProducts(updatedProducts);
   };
 
   return (
-    <div>
-      <h1>Admin</h1>
-
+    <div className="container">
       {products.map((product) => (
-        <div key={product.id}>
-          <span>{product.name}</span>
+        <div className="row" key={product.id}>
+          <div className="col">
+            <h2>{product.name}</h2>
+          </div>
 
-          <button onClick={() => removeProduct(product.id)}>Remove</button>
+          <div className="col">
+            <button className="btn" onClick={() => removeProduct(product.id)}>
+              Remove
+            </button>
+          </div>
         </div>
       ))}
     </div>
