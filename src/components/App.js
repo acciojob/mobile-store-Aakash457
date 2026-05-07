@@ -1,11 +1,25 @@
 import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-function Product() {
+import Home from "./home";
+import Admin from "./admin";
+import Product from "./product";
+
+function App() {
   return (
-    <div>
-      Product Component
-    </div>
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/admin">Admin</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/products/:id" element={<Product />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default Product;
+export default App;
